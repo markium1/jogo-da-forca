@@ -1,0 +1,30 @@
+import random
+lista_palavras = ['santos','palmeiras','flamengo','corinthians','vasco']
+time_aleatorio = random.randint(0,4) 
+palavra_user = list(lista_palavras[time_aleatorio])
+j=0
+while j < len(lista_palavras[time_aleatorio]):
+    palavra_user[j] = '_'
+    j+=1
+i=0
+VALENDO = True
+indice=0
+palavra = list(lista_palavras[time_aleatorio])
+while VALENDO:
+    letra_user = input('\nDigite a letra: ')
+    indice=0
+    if letra_user in lista_palavras[time_aleatorio]:
+        while indice < len(lista_palavras[time_aleatorio]):
+            if letra_user == palavra[indice]:
+                palavra_user[indice] = letra_user
+            indice+=1
+    else:
+        print('xii errou!')
+    texto = ''.join(palavra_user)
+    if texto == lista_palavras[time_aleatorio]:
+        print('ganhou: a palavra era %s' %texto)
+        VALENDO = False
+    else:
+        texto = ' '.join(palavra_user)
+        print(texto)
+    i+=1
